@@ -11,24 +11,31 @@ class CurrencyRepo {
 
   CurrencyRepo(this._currencyApi);
 
- Future<Tuple2<List<Currency>,String>> getLatestRates(
+  Future<Tuple2<List<Currency>, String>> getLatestRates(
       {required Map<String, dynamic> queryMap}) async {
     Response response = await _currencyApi.getLatestRates(queryMap: queryMap);
-    List<Currency> rates=parseRatesList(response.data['rates']);
-    String date=response.data['date'];
-    printDebug("dateee: $date");
+    List<Currency> rates = parseRatesList(response.data['rates']);
+    String date = response.data['date'];
     return Tuple2(rates, date);
   }
 
-  Future<List<Currency>> getTimeSeriesData({required String startDate,required String endDate}) async {
-    Response response = await _currencyApi.getTimeSeriesData(query: {'start_date':startDate,'end_date':endDate});
-    List<Currency> rates=parseRatesList(response.data['rates'][startDate]);
-    return rates;
+  Future<List<Currency>> getTimeSeriesData(
+      {required String startDate, required String endDate}) async {
+    Response response = await _currencyApi.getTimeSeriesData(
+        query: {'start_date': startDate, 'end_date': endDate});
+    if (response.data['rates'].isNotEmpty) {
+      List<Currency> rates = parseRatesList(response.data['rates'][startDate]);
+      return rates;
+    } else {
+      printDebug('error');
+      throw 'Error: invalid start or end date';
+    }
+
   }
 
   Future<List<Currency>> getSupportedSymbols() async {
-    Response response = await _currencyApi.getSupportedSymbols();
-    List<Currency> symbols = parseSymbolsList(response.data['symbols']);
+    Map<String, dynamic> data = await _currencyApi.getSupportedSymbols();
+    List<Currency> symbols = parseSymbolsList(data);
     return symbols;
   }
 

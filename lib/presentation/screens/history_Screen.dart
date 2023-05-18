@@ -20,7 +20,6 @@ class _HistoryScreenState extends State<HistoryScreen> {
   @override
   void initState() {
    cubit=BlocProvider.of(context);
-   cubit.getTimeSeriesData();
     super.initState();
   }
   @override

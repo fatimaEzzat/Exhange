@@ -1,19 +1,15 @@
 import 'package:exchange/cubit/currency_cubit.dart';
-import 'package:exchange/data/api/currency_api.dart';
-import 'package:exchange/data/repo/curency_repo.dart';
 import 'package:exchange/presentation/screens/setting_screen.dart';
 import 'package:exchange/presentation/widgets/header_widget.dart';
 import 'package:exchange/shared/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-
 import '../../shared/utilities.dart';
 import '../views/currency_item_view.dart';
 import '../widgets/currencies_btm_sheet.dart';
 import '../widgets/current_currency_card.dart';
 import '../widgets/exhange_rate_card.dart';
-import '../widgets/other_currencires_card.dart';
+
 
 class HomeScreen extends StatefulWidget {
   static String route = '/homeScreen';

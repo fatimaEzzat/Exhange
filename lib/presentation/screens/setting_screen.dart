@@ -32,6 +32,11 @@ class _SettingScreenState extends State<SettingScreen> {
   Widget build(BuildContext context) {
     return BlocConsumer<CurrencyCubit, CurrencyState>(
       listener: (context, state) {
+        if(state is SuccessGetTimeSeriesDataStates){
+          Navigator.pushNamed(context, HistoryScreen.route);
+        }else if(state is ErrorGetTimeSeriesDataStates){
+          showToast(msg: state.error, state: ToastedStates.ERROR);
+        }
       },
       builder: (context, state) {
         return Scaffold(
@@ -265,9 +270,9 @@ class _SettingScreenState extends State<SettingScreen> {
                         ],
                       ),
                      const  SizedBox(height: 20.0,),
-                      ElevatedButton(onPressed: (){
-                        Navigator.pushNamed(context, HistoryScreen.route);
-                      }, child:const  Text('Get History'))
+                    state is  ! LoadingGetTimeSeriesDataState ? ElevatedButton(onPressed: (){
+                        cubit.getTimeSeriesData();
+                      }, child:const  Text('Get History')):const Center(child: CircularProgressIndicator(),)
                     ],
                   ),
                 ),

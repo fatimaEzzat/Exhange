@@ -103,13 +103,13 @@ class CurrencyCubit extends Cubit<CurrencyState> {
   List<Currency> timeSeriesData = [];
 
   void getTimeSeriesData() {
+    printDebug('start_date: ${DateFormat('yyyy-MM-dd').format(selectedStartDate)}, end_date:${DateFormat('yyyy-MM-dd').format(selectedEndDate)}');
     emit(LoadingGetTimeSeriesDataState());
     _repo
         .getTimeSeriesData(
         startDate: DateFormat('yyyy-MM-dd').format(selectedStartDate),
         endDate: DateFormat('yyyy-MM-dd').format(selectedEndDate))
         .then((value) {
-
       timeSeriesData = value;
       emit(SuccessGetTimeSeriesDataStates());
     }).catchError((error) {
@@ -118,9 +118,10 @@ class CurrencyCubit extends Cubit<CurrencyState> {
   }
 
 
-  ///select symbol
-  Currency selectedBase = Currency(code: 'USD');
-  Currency selectedTarget = Currency(code: 'EGP');
+  ///select symbol.
+  //initial with default values
+  Currency selectedBase = const Currency(code: 'USD');
+  Currency selectedTarget = const Currency(code: 'EGP');
 
   void selectSymbol({required Currency symbol, required bool isBase}) {
     if (isBase) {

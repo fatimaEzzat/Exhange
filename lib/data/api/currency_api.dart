@@ -14,11 +14,11 @@ class CurrencyApi{
     return response;
   }
 
-  Future<dynamic> getSupportedSymbols() async {
+  Future<Map<String,dynamic>> getSupportedSymbols() async {
     var response = await DioHelper.getData(
         endPoint: supportedSymbols);
     log('getSupportedSymbols: ${response.data.toString()}');
-    return response;
+    return response.data['symbols'];
   }
 
   Future<dynamic> convertCurrency({required Map<String,dynamic> query}) async {
