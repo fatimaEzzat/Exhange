@@ -36,7 +36,7 @@ void main() {
     expect(actualSymbols, symbols);
   });
 
-  test('convertCurrency returns the converted amount if successful', () async {
+  test('convert Currency returns the converted amount if successful', () async {
     // Arrange
     String from = 'USD';
     String to = 'EUR';
@@ -104,7 +104,7 @@ void main() {
   });
 
   test('get Time Series Data should throw error when enter invalid start or end date', () async {
-    // Arrange
+    // Arrange..provide invalid dates
     String startDate = '2023-06-22';
     String endDate = '2023-06-02';
 
