@@ -7,7 +7,11 @@ This project provide currency conversion over spesific date
 Home Screen                         |  Setting Screen           | Home Screen
 :----------------------------------:|:-------------------------:|:-------------------------:
 
-<img width="232" alt="Screenshot_1684350649" src="https://github.com/fatimaEzzat/Exhange/assets/31897018/f77bcb9c-d497-42bd-8e15-68c395dc1022"> | <img width="232" alt="Screenshot_1684350656" src="https://github.com/fatimaEzzat/Exhange/assets/31897018/3c85ef8b-70d6-4c9d-a4bf-e7796d9c1205"> | <img width="232" alt="Screenshot_1684350662" src="https://github.com/fatimaEzzat/Exhange/assets/31897018/d3eea363-019f-428e-91b0-8a2bf12a7cc1">
+<img width="232" alt="Screenshot_1684350662" src="https://github.com/fatimaEzzat/Exhange/assets/31897018/7e9f62c2-7e95-4fa8-bcb5-09e8eb063a37"> | <img width="232" alt="Screenshot_1684350638" src="https://github.com/fatimaEzzat/Exhange/assets/31897018/4aace482-e57c-4474-8183-216f7ae9ea24"> | <img width="232" alt="Screenshot_1684350662" src="https://github.com/fatimaEzzat/Exhange/assets/31897018/5e68a1a6-258c-469b-8434-d968c5165e63">
+
+
+
+
 
 
 ## Implementation:
