@@ -1,6 +1,6 @@
 # Exhange
 
-This project provide currency conversion over spesific date
+This project provide currency conversion over spesific date 
 
 ## Getting Started
 
@@ -38,6 +38,9 @@ Home Screen                         |  Setting Screen           | Home Screen
 ● get Time Series Data should throw error when enter invalid start or end date.
 
 Each test is provided with clear description ,feel free to run all of tests or one of them ,each unit doesn't depend on others.
+
+
+
 
 
 
