@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return BlocConsumer<CurrencyCubit, CurrencyState>(
       listener: (context, state) {
         if(state is SuccessGetSupportedSymbolsState){
-          Navigator.pushNamed(context, HomeScreen.route);
+          Navigator.pushReplacementNamed(context, HomeScreen.route);
         }if(state is ErrorGetSupportedSymbolsState){
           showToast(msg: state.error, state: ToastedStates.ERROR);
         }
